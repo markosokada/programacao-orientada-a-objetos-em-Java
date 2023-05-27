@@ -1,0 +1,74 @@
+primeiramente temos que expecificar oque e classe e oque e objeto.
+
+objetos em programação são representações de coisas da vida real (sejam elas concretas ou abstratas) dentro do seu código.
+
+Porém, para conseguirmos colocar estas representações dentro do código de fato, precisamos nos familiarizar com os dois seguintes conceitos, que são necessários para entendermos como são estruturados os objetos dentro de programação:
+
+Atributo – Tudo aquilo que representa uma característica de um objeto
+Método – Tudo aquilo que representa uma ação que um objeto realiza
+
+Olhe ao seu redor, aposto que você consegue ver vários objetos, certo? Quase todas essas coisas que estão em volta de você nesse exato momento poderiam ser usados como exemplos para praticar os conceitos da orientação a objetos. 
+
+Para trabalharmos com o mesmo exemplo, pense no primeiro cachorro que vier na sua cabeça. Pensou?
+
+Legal, vamos usar ele(a) como nosso exemplo de objeto. Poderíamos levantar uma série de características, ou atributos, deste cachorro, como por exemplo:
+
+Nome
+Idade
+Raça
+Tamanho
+Também é possível pensar em uma série de ações, ou métodos, que este cachorro realiza, como por exemplo:
+
+Latir
+Comer
+Dormir
+Brincar
+Agora que definimos os métodos e atributos do nosso cachorro, já estamos prontos para colocá-lo dentro do nosso código. Para fazermos isso, precisamos da ajuda de uma classe, que é um dos conceitos mais importantes dentro da programação orientada a objetos, e para utilizá-la corretamente é fundamental entender a diferença entre ela e um objeto.
+
+Ainda no exemplo do cachorro, você concorda que, por mais que você tenha pensado em um cachorro específico, todos os outros cachorros também têm características iguais às que levantamos? Por exemplo, por mais que o nome e a raça de dois cachorros sejam diferentes, ainda assim os dois têm nome e raça, certo?
+
+Pensando dessa maneira, poderíamos criar uma espécie de molde de cachorro, que seria um conjunto de atributos e métodos que todos os cachorros compartilham entre si. Essa é a definição de classe, que nada mais é do que a base que será utilizada para criar um objeto.
+
+Quando criamos um objeto a partir de uma classe, estamos realizando um processo chamado de instanciação.
+
+Então para diferenciar, podemos pensar na Classe como sendo um molde que reúne todas as características em comum de um determinado grupo (no nosso caso, de cachorros), e no objeto como um cachorro específico cuja construção veio a partir deste molde.
+
+Simples, né?
+
+Eu sei que você quer ver código, então aqui tem uma palhinha de como uma classe Cachorro poderia ser estruturada em Java (não se preocupe em entender tudo nesse momento, no futuro vamos voltar neste código e revê-lo passo a passo)
+
+public class Cachorro { // Nome da Classe 
+
+ // Atributos
+
+ public String nome;
+
+ public Integer idade; 
+
+ public String raca; 
+
+ public String tamanho;
+
+ // Métodos
+
+ public void latir() {
+
+   System.out.println("Latindo…");
+
+ }
+
+ public void comer() {
+
+   System.out.println("Comendo…");
+
+ }
+  public void dormir() {
+   System.out.println("Dormindo...");
+ }
+ 
+ public void brincar() {
+   System.out.println("Brincando...");
+ }
+} 
+ 
+Você consegue fazer esse levantamento de métodos e atributos com alguma outra coisa que esteja ao seu redor nesse momento? Se você conseguir, pode ter certeza que o que você acabou de visualizar poderia ser considerado um objeto dentro do mundo da programação (o que na prática envolve quase tudo)
