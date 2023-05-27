@@ -1,0 +1,321 @@
+Métodos
+
+Explicando os tipos de métodos existentes na programação OO. 
+
+Quando definimos um objeto num programa orientado a objetos, implementamos todo o comportamento desse objeto em um ou mais métodos. 
+
+Um método em Java é equivalente a uma função, subrotina ou procedimento em outras linguagens de programação. 
+
+Não existe em Java o conceito de métodos globais. Todos os métodos devem sempre ser definidos dentro de uma classe.
+
+ 
+
+A sintaxe para construção de um método é a seguinte:
+
+ 
+
+[modificador] tipo_retorno identificador ([argumentos]) {
+
+//Corpo do método
+
+}
+
+ 
+
+Modificadores de Acesso
+
+
+Java controla o acesso a atributos e métodos através do uso dos modificadores de acesso. São eles :
+
+ 
+
+public : É o menos restritivo de todos. Atributos e métodos declarados como public
+
+em uma classe podem ser acessados pelos métodos da própria classe, por classes
+
+derivadas desta e por qualquer outra classe em qualquer outro pacote (veremos mais sobre pacotes e classes derivadas posteriormente).
+
+protected : Atributos e métodos definidos como protected são acessíveis pelos
+
+métodos da própria classe e pelas classes derivadas. 
+
+private : É o mais restritivo. Atributos e métodos declarados como private só podem ser acessados pelos métodos da própria classe. 
+
+Quando nenhum modificador é definido (acesso do tipo “package”), os atributos e
+
+métodos podem ser acessados pelos métodos da própria classe, pelas classes derivadas e por qualquer outra classe dentro do mesmo pacote. 
+
+É importante destacar que esse controle não se aplica às variáveis locais aos métodos.
+ 
+
+Nome de Métodos
+O nome de um método deve começar com uma letra (a-z/A-Z), um underscore (_), ou um sinal de dólar ( $ ). Os caracteres subsequentes podem incluir os dígitos de 0 a 9.
+
+Convenção : Use verbos para nome de métodos. Faça a primeira letra do nome minúscula com cada letra inicial interna maiúscula. Por exemplo : getUserName(),
+
+getMaxPrice().
+
+ 
+
+Argumentos
+Um método pode ter zero ou mais argumentos (ou parâmetros);
+ 
+Caso não tenha argumentos, é necessário informar os parênteses vazios tanto na definição como na chamada do método.
+
+O nome do método acrescido de seus parâmetros é denominado assinatura do método. 
+
+Cada argumento deve ser declarado como define-se uma variável, especificando o seu tipo e nome.
+ 
+Caso seja mais de um argumento, cada declaração deve estar separada por vírgula.
+
+public void setAge(int newAge)
+
+{
+
+age = newAge;
+
+}
+
+//exemplo a
+ public void displayAge()
+
+{
+
+System.out.println(“Age is : ” + age);
+
+}
+
+//exemplo b
+
+public void setUser(int newAge, String newName)
+
+{
+
+age = newAge;
+
+name = newName;
+
+}
+
+//exemplo c
+
+Retornando Valor a Partir de um Método
+
+É possível associar um valor de retorno a um método. Para isso, é preciso definir, na frente do nome do método, o tipo do valor a ser retornado. O tipo pode ser um primitivo ou então uma classe ou interface. Caso o método não retorne valor algum, é obrigatória a utilização do tipo void na assinatura do método. Veja os exemplos abaixo:
+ 
+public int getAge () {
+
+return age;
+
+}
+
+public String getName () {
+
+return name;
+
+}
+
+O comando return é utilizado para passar o valor requerido de volta para quem chamou o método e é obrigatório quando o tipo de retorno não é void. Ele deve receber um único valor ou uma expressão que deve ser compatível com o tipo de retorno especificado para o método. Quando o comando é encontrado, o método termina sua execução imediatamente, ignorando todas as instruções subsequentes.
+
+Um comando return sem valor de retorno retorna o tipo void, mas não é obrigatória sua utilização nestes casos.
+
+Passando Parâmetros para um Método
+Passando um Primitivo : Quando um valor primitivo é passado na chamada de um método, uma cópia deste valor é criada e atribuída para o argumento do método responsável por recebê-la.
+
+Se o método mudar este valor, apenas o valor do argumento local ao método é afetado. Quando o método terminar sua execução, o valor original da variável utilizada para passar o valor primitivo na chamada do método permanecerá inalterado.
+
+public void incrementa (int num) {
+
+num++;
+
+System.out.println(“num : ” + num);
+
+}
+
+// veja agora
+
+int num = 10;
+
+incrementa (num); //Imprimirá 11
+
+System.out.println(”num : ” + num); //Imprimirá 10
+
+Passando a Referência de um Objeto : Quando o tipo passado para o método não for um primitivo mas sim um objeto, esse comportamento muda. Quando passamos um objeto, uma referência ao objeto original é passada ao invés de uma cópia do objeto. 
+
+A referência contém o endereço de memória onde está contido o objeto original e qualquer modificação feita pelo método no argumento que recebeu esta referência afetará também o objeto original.
+
+O Java é mais purista em relação à orientação a objetos que Delphi, portanto não existem “funções” perdidas, cada método esta hierarquicamente ligado a uma classe, portanto você sempre irá acessar um método através:
+
+Classe.Método() ou Objeto.Método
+Para os métodos estáticos não é necessário instanciar um objeto para usá-lo, já nos outros casos, a funcionalidade do método só é possível após instanciação, que é a criação de um objeto a partir da sua classe.
+
+Já utilizamos métodos de classes pré-definidas como em:
+
+Integer.parseInt()
+
+String.charAt()
+
+String.length(), entre outros.
+
+Podemos criar nossos próprios métodos e já temos feito isso nos exemplos, já que código funcional em Java sempre esta dentro de métodos.
+
+O método main que recebe o argumento String[] args tem sido utilizado em todos os exemplos, porém podemos dividir, modularizar mais ainda, distribuído a lógica em outros métodos.
+
+Até aqui os exemplos têm sido pequenos, imagine algo maior, com várias tarefas agregadas, cada um com seu escopo natural, neste contexto o uso de métodos se faz quase imprescindível.
+
+ 
+
+O uso de métodos separa e organiza a lógica, além disso, tratar problemas grandes, dividindo os mesmos em problemas menores é uma técnica bastante efetiva.
+
+ 
+
+Um método deve ser codificado dentro da classe a qual pertence, portanto estará entre as chaves da classe. Um método em Java, tal como uma função retorna um valor, mas alternativamente podemos dizer que ele retorna vazio (void), sendo, portanto somente um procedimento. Vejamos a sintaxe básica para criação de um método:
+
+ 
+
+<qualificadores> <tipo-de-retorno> <nome-do-método> ([lista-de-parâmetros]){
+
+<bloco-de-comandos>
+
+}
+
+ 
+
+O primeiro detalhe é relativo a <qualificadores> estes podem assumir várias formas, iremos destacar mais a frente este tópico, mas neste momento você deve conhecer:
+
+ 
+
+public static – Permite criar um método que pode ser executado por agentes externos, inclusive independente de instanciação.
+
+private static – Como o nome sugere este método só é visível dentro da própria classe onde foi definido e poderá ser executado diretamente sem necessidade de instanciação.
+
+Em ambos os casos omitindo-se a palavra, static, estaremos obrigando a instanciação de um objeto para então utilizar o método, um método estático é mais oneroso para o sistema, porém sempre temos algum método estático que inicia o processo de execução.
+
+Com estes dois qualificadores é possível atender a praticamente todos os casos. 
+
+O <tipo-de-retorno> é um valor ou objeto que é retornado pelo método após o processamento interno do método, como em uma função matemática, você pode passar parâmetros e ter um valor como resposta. Você declara o <tipo-de-retorno> como um tipo de dados ou uma classe.
+
+O <nome-do-método> segue o padrão de nomenclatura adotado até agora, veja que você poderá executar o método chamado-o pelo nome. Relembrando este nome deverá ter letras minúsculas, a não ser as iniciais das segundas componentes em diante.
+
+A [lista-de-parâmetros] é opcional, mas muito interessante para fazer a interface entre o exterior e a rotina que esta internalizada ao método, ao seja, pela parametrização que você consegue criar métodos genéricos, que atendam a várias situações.
+
+As chaves servirão para agrupar o que faz parte do método, em termos de codificação.
+Vejamos um exemplo, onde iremos definir um método chamado terco, que calcula um terço do valor que foi passado como parâmetro, veja que continuamos a definir main e é por onde tudo se inicia.
+
+UmTerco.java
+
+public class UmTerco{
+
+public static void main(String[] args){
+
+double num;
+
+for (num=1; num<10; num++){
+
+System.out.println ("Um terço de " + num + " é " + terco(num));
+
+}
+
+System.out.println ("*** FIM ***");
+
+}
+
+// método auxiliar terco (calcula um terço de um parametro double)
+
+private static double terco (double n){
+
+return n/3;
+
+}
+
+}
+
+Note que a declaração de parâmetros segue a regra de declaração comum, que é colocar o tipo primeiro, depois o nome do parâmetro.
+
+Outro detalhe é que como estamos dentro da classe que contém o método não precisamos preceder o nome do método com o nome da classe.
+
+No próximo exemplo iremos criar uma função de recebe como parâmetro uma frase e retorna esta frase espacejada, ou seja, iremos adicionar um espaço em branco para cada caractere da frase.
+
+FraseSpace.java
+
+public class FraseSpace{
+
+public static void main(String[] args){
+
+System.out.println(espacejando ("java"));
+
+System.out.println(espacejando ("O método é uma boa prática de
+
+programação"));
+
+}
+
+private static String espacejando (String f){
+
+String aux="";
+
+for (byte i=0;i<f.length();i++){
+
+aux=aux+f.charAt(i)+ " ";
+
+}
+
+return aux;
+
+}
+
+}
+
+Note que o parâmetro pode ser passado também como um literal (“java”), não precisa ser uma variável, porque estamos usando passagem de parâmetro por valor, ou seja, é feita uma cópia do valor e colocada na variável que representa o parâmetro no caso f.
+
+Para finalizar temos um exemplo com dois métodos, somatório e produtório, que recebem um vetor de inteiros e devolvem a somatória e o produtório dos elementos respectivamente.
+
+CalcVetor.java
+
+public class CalcVetor{
+
+public static void main(String[] args){
+
+int[] vetor = new int[5];
+
+vetor[0]=10;
+
+vetor[1]=5;
+
+vetor[2]=7;
+
+vetor[3]=8;
+
+vetor[4]=1;
+
+System.out.println("O somatório é " + somatorio(vetor));
+
+System.out.println("O produtório é " + produtorio(vetor));
+
+}
+
+private static int somatorio (int[] v){
+
+int aux=0; // Elemento neutro do somatório
+
+for (byte i=0;i<v.length;i++)
+
+aux+=v[i];
+
+return aux;
+
+}
+
+private static int produtorio (int[] v){
+
+int aux=1; // Elemento neutro do produtório
+
+for (byte i=0;i<v.length;i++)
+
+aux*=v[i];
+
+return aux;
+
+}
+
+}
