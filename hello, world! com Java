@@ -1,0 +1,12 @@
+pra rodar uma aplicacao em Java é necessario ter um metodo "Main". esse metodo precisa ter 5 caracteristicas:
+esse metodo precisa ser publico.
+
+esse metodo precisa ser estatico.
+
+ele não pode retornar nenhum valor entao ele tem a descricao void.
+
+obrigatoriamente ele tem que ter o nome Main.
+
+e por ultmo ele recebe como parametro um rray ou um varar de String.
+
+
